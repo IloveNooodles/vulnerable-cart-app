@@ -1,0 +1,18 @@
+h1 Order Details
+p
+  | Order ID: #{@order.id}
+p
+  | Product ID: #{@order.product_id}
+p
+  | Quantity: #{@order.quantity}
+
+h2 Update Order
+= form_with model: @order, local: true do |form|
+  .form-group
+    = form.label :product_id
+    = form.text_field :product_id, class: 'form-control'
+  .form-group
+    = form.label :quantity
+    = form.text_field :quantity, class: 'form-control'
+  = form.submit 'Update Order', class: 'btn btn-primary'
+= link_to 'Back to Orders', orders_path, class: 'btn btn-secondary'

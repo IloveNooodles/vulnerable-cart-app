@@ -1,0 +1,7 @@
+h1 = @product.name
+p
+  | Description: #{@product.description}
+p
+  | Price: $#{@product.price}
+= image_tag @product.cached_image_url, class: 'img-thumbnail', width: '200', loading: 'lazy'
+= link_to 'Back to Products', products_path, class: 'btn btn-secondary'

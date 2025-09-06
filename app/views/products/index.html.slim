@@ -1,0 +1,20 @@
+h1 Products
+= form_with url: search_products_path, method: :get, local: true do
+  .form-group
+    label for="query" Search Products:
+    = text_field_tag :query, nil, class: 'form-control', placeholder: 'Enter product name'
+    = submit_tag 'Search', class: 'btn btn-primary'
+
+.row
+  - @products.each do |product|
+    .col-md-4.mb-4
+      .card
+        - if product.img_url.present?
+          = image_tag product.img_url, class: 'card-img-top'
+        .card-body
+          h5.card-title = product.name
+          p.card-text = product.description
+          p.card-text
+            small.text-muted $#{product.price}
+          = link_to 'View', product_path(product), class: 'btn btn-primary btn-sm'
+          = link_to 'Add to Order', new_order_path(product_id: product.id), class: 'btn btn-success btn-sm'

@@ -1,0 +1,16 @@
+h1 Add New Product
+= form_with model: @product, local: true do |form|
+  .form-group
+    = form.label :name
+    = form.text_field :name, class: 'form-control'
+  .form-group
+    = form.label :description
+    = form.text_field :description, class: 'form-control'
+  .form-group
+    = form.label :price
+    = form.text_field :price, class: 'form-control'
+  .form-group
+    = form.label :img_url
+    = form.text_field :img_url, class: 'form-control', placeholder: 'Enter image URL'
+  = form.submit 'Add Product', class: 'btn btn-primary'
+= link_to 'Back to Products', products_path, class: 'btn btn-secondary'

@@ -1,0 +1,16 @@
+h1.mb-4 Your Orders
+table.table.table-striped
+  thead
+    tr
+      th Order ID
+      th Product ID
+      th Quantity
+      th Actions
+  tbody
+    - @orders.each do |order|
+      tr
+        td = order.id
+        td = order.product_id
+        td = order.quantity
+        td
+          = link_to 'View', order_path(order), class: 'btn btn-primary btn-sm'

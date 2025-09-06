@@ -1,0 +1,2 @@
+class ThisIsVerySecretLongTableName < ApplicationRecord
+end

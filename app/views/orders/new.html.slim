@@ -1,0 +1,8 @@
+h1 Create New Order
+= form_with model: @order, local: true do |form|
+  = hidden_field_tag :product_id, params[:product_id]
+  .form-group
+    = form.label :quantity
+    = form.text_field :quantity, class: 'form-control'
+  = form.submit 'Create Order', class: 'btn btn-primary'
+= link_to 'Back to Orders', orders_path, class: 'btn btn-secondary'
